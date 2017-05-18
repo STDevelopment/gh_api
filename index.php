@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-<html>
-   <head>
-      <meta charset="utf-8">
-      <title></title>
-   </head>
-   <body>
+<?php
 
-      <?php
-      echo "Hello!";
-       ?>
+define('__SERVER_PATH__', $_SERVER['DOCUMENT_ROOT']);
+define('__CUR_DATE__', date("Y-m-d H:i:s"));
 
-   </body>
-</html>
+require_once('logs.php');
+
+write_log('src','load',json_decode($_POST['payload']),$_SERVER);
+
+?>
